@@ -12,7 +12,6 @@ const OrderTab = ({ items }) => {
     },
   };
   return (
-    <div>
       <Swiper
         pagination={pagination}
         modules={[Pagination]}
@@ -26,7 +25,6 @@ const OrderTab = ({ items }) => {
           </div>
         </SwiperSlide>
       </Swiper>
-    </div>
   );
 };
 

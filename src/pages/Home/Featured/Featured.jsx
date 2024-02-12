@@ -15,7 +15,7 @@ const Featured = () => {
             <img className="rounded-xl" src={featured} alt="" />
           </div>
           <div className="md:ml-10">
-            <p className="text-xl text-yellow-500 font-bold">Aug 20, 2024</p>
+            <p className="text-xl text-orange-500 font-bold">Aug 20, 2024</p>
             <p className="text-3xl font-semibold my-2">Where can I get Some?</p>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae

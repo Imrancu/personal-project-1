@@ -17,7 +17,7 @@ const PopularMenu = () => {
         ))}
       </div>
       <div className="flex flex-col items-center">
-        <button className="btn btn-outline border-0 border-b-2 uppercase mt-5">
+        <button className="btn btn-outline border-0 border-orange-500 text-orange-500 hover:bg-orange-500 hover:border-0 border-b-2 bg-slate-100 uppercase mt-5">
           view full menu
         </button>
       </div>
