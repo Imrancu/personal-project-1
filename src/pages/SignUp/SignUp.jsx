@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 const SignUp = () => {
   const {
@@ -13,30 +15,38 @@ const SignUp = () => {
     formState: { errors },
   } = useForm();
 
-  const {createUser, updateUserProfile} = useContext(AuthContext)
-  const navigate = useNavigate()
+  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const axiosPublic = useAxiosPublic();
 
   const onSubmit = (data) => {
-    console.log(data);
-    createUser(data.email, data.password)
-    .then(result => {
+    createUser(data.email, data.password).then((result) => {
       const loggedUser = result.user;
       console.log(loggedUser);
       updateUserProfile(data.name, data.photoURL)
-      .then(()=> {
-        console.log("User profile info updated");
-        reset()
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "User Created Successfully!",
-          showConfirmButton: false,
-          timer: 1500
-        });
-        navigate('/')
-      })
-      .catch(error => console.log(error))
-    })
+        .then(() => {
+          // create user entry in the database
+          const userInfo = {
+            name: data.name,
+            email: data.email,
+          };
+          axiosPublic.post("users/", userInfo).then((res) => {
+            if (res.data.insertedId) {
+              console.log("user added added to the database");
+              reset();
+              Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "User Created Successfully!",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+              navigate("/");
+            }
+          });
+        })
+        .catch((error) => console.log(error));
+    });
   };
 
   return (
@@ -46,7 +56,7 @@ const SignUp = () => {
       </Helmet>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center lg:text-left">
+          <div className="text-center w-1/2 lg:text-left">
             <h1 className="text-5xl font-bold">Sign up now!</h1>
             <p className="py-6">
               Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
@@ -142,6 +152,14 @@ const SignUp = () => {
                   </a>
                 </label>
               </div>
+              <p className="">
+                <small>
+                  Already have an account?{" "}
+                  <Link to="/login" className="text-orange-500 underline">
+                    Login Here
+                  </Link>
+                </small>
+              </p>
               <div className="form-control mt-6">
                 <input
                   type="submit"
@@ -150,7 +168,7 @@ const SignUp = () => {
                 />
               </div>
             </form>
-            <p className="px-10 pb-5"><small>Already have an account? <Link to="/login" className="text-orange-500 underline">Login Here</Link></small></p>
+            <SocialLogin></SocialLogin>
           </div>
         </div>
       </div>

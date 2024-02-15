@@ -8,13 +8,14 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 const Login = () => {
   const [disabled, setDisabled] = useState(true);
 
   const { signIn } = useContext(AuthContext);
-  const navigate = useNavigate()
-  const location = useLocation()
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const from = location.state?.from?.pathname || "/";
 
@@ -23,12 +24,11 @@ const Login = () => {
   }, []);
 
   const handleLogin = (event) => {
-
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+
     signIn(email, password).then((result) => {
       const user = result.user;
       console.log(user);
@@ -119,9 +119,17 @@ const Login = () => {
                   required
                 />
               </div>
+              <p className="">
+                <small>
+                  Do not have account?{" "}
+                  <Link to="/signUp" className="text-orange-500 underline">
+                    Register here.
+                  </Link>
+                </small>
+              </p>
               <div className="form-control mt-6">
                 <input
-                // Todo: Apply disable for re captcha 
+                  // Todo: Apply disable for re captcha
                   disabled={false}
                   type="submit"
                   value="Login"
@@ -129,14 +137,7 @@ const Login = () => {
                 />
               </div>
             </form>
-            <p className="px-10 pb-5">
-              <small>
-                Do not have account? <Link to="/signUp" className="text-orange-500 underline">
-                  Register here.
-                </Link>
-                 
-              </small>
-            </p>
+            <SocialLogin></SocialLogin>
           </div>
         </div>
       </div>
