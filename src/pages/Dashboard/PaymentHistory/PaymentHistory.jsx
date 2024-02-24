@@ -15,11 +15,11 @@ const PaymentHistory = () => {
   });
   return (
     <div>
-      <h2>Total Payments: {payments.length}</h2>
+      <h2 className="text-2xl text-center my-3 text-gray-500 font-bold">Total Payments: {payments.length}</h2>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
-          <thead>
+          <thead className="text-xl">
             <tr>
               <th>#</th>
               <th>Price</th>
