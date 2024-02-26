@@ -53,12 +53,12 @@ const Login = () => {
     });
   };
 
-  const handleValidateCaptcha = (e) => {
-    const userCaptchaValue = e.target.value;
-    if (validateCaptcha(userCaptchaValue)) {
-      setDisabled(false);
-    }
-  };
+  // const handleValidateCaptcha = (e) => {
+  //   const userCaptchaValue = e.target.value;
+  //   if (validateCaptcha(userCaptchaValue)) {
+  //     setDisabled(false);
+  //   }
+  // };
 
   return (
     <>
@@ -112,11 +112,11 @@ const Login = () => {
                 </label>
                 <input
                   type="text"
-                  onBlur={handleValidateCaptcha}
+                  // onBlur={handleValidateCaptcha}
                   name="captcha"
                   placeholder="Type the above captcha"
                   className="input input-bordered"
-                  required
+                  // required
                 />
               </div>
               <p className="">
