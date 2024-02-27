@@ -5,12 +5,12 @@ import "./featured.css";
 const Featured = () => {
   return (
     <div className="featured-item bg-fixed text-white pt-4 my-20">
-      <div className="content-above-overlay">
+      <div className="content-above-overlay ">
         <SectionTitle
           subHeading={"Check it Out"}
           heading={"Featured Item"}
         ></SectionTitle>
-        <div className="md:flex justify-center items-center py-16 px-36">
+        <div className="md:flex gap-16 max-w-screen-xl mx-auto justify-center items-center py-16">
           <div>
             <img className="rounded-xl" src={featured} alt="" />
           </div>
@@ -25,7 +25,7 @@ const Featured = () => {
               praesentium maxime voluptatum recusandae, ea quo voluptate
               molestias cum vel maiores tempora. Reprehenderit?
             </p>
-            <button className="btn btn-outline border-0 border-b-2 uppercase text-white mt-5">
+            <button className="btn btn-outline border-0 border-orange-500 hover:bg-orange-500 hover:border-0 border-b-2 bg-slate-100 uppercase text-orange-600  mt-5">
               Order Now
             </button>
           </div>
