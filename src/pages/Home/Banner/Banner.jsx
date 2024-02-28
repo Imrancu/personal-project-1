@@ -10,7 +10,8 @@ import img6 from "../../../assets/home/06.png";
 const images = [img1, img2, img3, img4, img5, img6];
 const Banner = () => {
   return (
-    <Carousel>
+    <Carousel
+      >
       {images.map((img, index) => (
         <div key={index}>
           <img src={img} />
