@@ -4,7 +4,7 @@ const Party = () => {
   return (
     <div className="hero my-24">
       <div className="hero-content md:max-w-h-xl gap-12 p-0 justify-between flex-col lg:flex-row">
-        <div className="bg-orange-50 p-10 border border-orange-600 rounded-lg shadow-lg">
+        <div data-aos="zoom-in-left" data-aos-duration="1000" className="bg-orange-50 p-10 border border-orange-600 rounded-lg shadow-lg">
           <h3 className="text-3xl">Book Your Schedule</h3>
           <p className="text-xl my-4">
             We recommend celebrating all moments, big or small, or turning a
@@ -21,7 +21,7 @@ const Party = () => {
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
           <span className="relative inline-flex rounded-full h-3 w-3 bg-orange-500"></span>
         </span>
-        <img src={party} className="max-w-lg rounded-lg" />
+        <img data-aos="zoom-in-right" data-aos-duration="1000" src={party} className="max-w-lg rounded-lg" />
       </div>
     </div>
   );

@@ -15,6 +15,7 @@ const Navbar = () => {
       .then(() => {})
       .catch((error) => console.log(error));
   };
+  
   const navOptions = (
     <div className="flex justify-center items-center">
       <li>

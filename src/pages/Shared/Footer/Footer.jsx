@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     
-      <div className=" bg-orange-50">
+      <div className=" bg-orange-50" data-aos-duration="1000" data-aos="zoom-in">
         <footer className="footer p-10 max-w-screen-xl mx-auto text-base-content">
         <nav>
           <h6 className="footer-title">Services</h6>

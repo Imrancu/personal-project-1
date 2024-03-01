@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import SocialLogin from "../../components/SocialLogin/SocialLogin";
-import login from '../../assets/home/login.jpg'
+import signUp from '../../assets/home/signup.jpg'
 
 const SignUp = () => {
   const {
@@ -58,10 +58,10 @@ const SignUp = () => {
       <div className="hero min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center w-1/2 lg:text-left">
-          <img src={login} alt="" />
+          <img src={signUp} alt="" />
           </div>
-          <div className="card shrink-0 w-full max-w-sm">
-            <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+          <div className="card shrink-0 w-full max-w-sm bg-orange-50">
+            <form onSubmit={handleSubmit(onSubmit)} className="card-body pb-0">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>
@@ -77,7 +77,7 @@ const SignUp = () => {
                   <p className="text-red-600">Name is required</p>
                 )}
               </div>
-              <div className="form-control">
+              {/* <div className="form-control">
                 <label className="label">
                   <span className="label-text">Photo URL</span>
                 </label>
@@ -90,7 +90,7 @@ const SignUp = () => {
                 {errors.photoURL && (
                   <p className="text-red-600">Photo URL is required</p>
                 )}
-              </div>
+              </div> */}
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -142,13 +142,13 @@ const SignUp = () => {
                   </p>
                 )}
 
-                <label className="label">
+                {/* <label className="label">
                   <a href="#" className="label-text-alt link link-hover">
                     Forgot password?
                   </a>
-                </label>
+                </label> */}
               </div>
-              <p className="">
+              <p className="pl-1">
                 <small>
                   Already have an account?{" "}
                   <Link to="/login" className="text-orange-500 underline">
@@ -156,11 +156,11 @@ const SignUp = () => {
                   </Link>
                 </small>
               </p>
-              <div className="form-control mt-6">
+              <div className="form-control">
                 <input
                   type="submit"
                   value="Sign Up"
-                  className="btn btn-primary"
+                  className="btn w-full bg-orange-600 hover:bg-orange-500 text-white"
                 />
               </div>
             </form>

@@ -11,10 +11,10 @@ const Featured = () => {
           heading={"Featured Item"}
         ></SectionTitle>
         <div className="md:flex gap-16 max-w-screen-xl mx-auto justify-center items-center py-16">
-          <div>
+          <div data-aos="zoom-in" data-aos-duration="1000">
             <img className="rounded-xl" src={featured} alt="" />
           </div>
-          <div className="md:ml-10">
+          <div className="md:ml-10" data-aos="zoom-in" data-aos-duration="1000">
             <p className="text-xl text-orange-500 font-bold">Aug 20, 2024</p>
             <p className="text-3xl font-semibold my-2">Where can I get Some?</p>
             <p>

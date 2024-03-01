@@ -12,7 +12,7 @@ import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 
 const Category = () => {
   return (
-    <section className="max-w-screen-xl mx-auto mb-24">
+    <section className="max-w-screen-xl mx-auto mb-24"  data-aos="fade-right" data-aos-duration="2000">
         <SectionTitle
         subHeading={"From 11.00am to 10.00pm"}
         heading={"Order Online"}

@@ -12,7 +12,6 @@ import SocialLogin from "../../components/SocialLogin/SocialLogin";
 import login from '../../assets/home/login.jpg'
 
 const Login = () => {
-  const [disabled, setDisabled] = useState(true);
 
   const { signIn } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -20,9 +19,6 @@ const Login = () => {
 
   const from = location.state?.from?.pathname || "/";
 
-  useEffect(() => {
-    loadCaptchaEnginge(6);
-  }, []);
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -54,13 +50,6 @@ const Login = () => {
     });
   };
 
-  // const handleValidateCaptcha = (e) => {
-  //   const userCaptchaValue = e.target.value;
-  //   if (validateCaptcha(userCaptchaValue)) {
-  //     setDisabled(false);
-  //   }
-  // };
-
   return (
     <>
       <Helmet>
@@ -72,8 +61,8 @@ const Login = () => {
             {/* <h1 className="text-5xl font-bold">Login now!</h1> */}
             <img src={login} alt="" />
           </div>
-          <div className="card md:w-1/2 max-w-sm">
-            <form onSubmit={handleLogin} className="card-body">
+          <div className="card md:w-1/2 max-w-sm bg-orange-50">
+            <form onSubmit={handleLogin} className="card-body pb-0">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -103,19 +92,6 @@ const Login = () => {
                   </a>
                 </label>
               </div>
-              <div className="form-control">
-                <label className="label">
-                  <LoadCanvasTemplate />
-                </label>
-                <input
-                  type="text"
-                  // onBlur={handleValidateCaptcha}
-                  name="captcha"
-                  placeholder="Type the above captcha"
-                  className="input input-bordered"
-                  // required
-                />
-              </div>
               <p className="">
                 <small>
                   Do not have account?{" "}
@@ -130,7 +106,7 @@ const Login = () => {
                   disabled={false}
                   type="submit"
                   value="Login"
-                  className="btn btn-primary"
+                  className="btn w-full bg-orange-600 hover:bg-orange-500 text-white"
                 />
               </div>
             </form>
