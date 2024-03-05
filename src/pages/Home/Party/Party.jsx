@@ -1,8 +1,12 @@
 import party from "../../../assets/home/party.jpg";
+import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 
 const Party = () => {
   return (
-    <div className="hero my-24">
+    <div>
+      <SectionTitle heading="Book Here" subHeading="Book your suitable schedule"></SectionTitle>
+
+      <div className="hero my-24">
       <div className="hero-content md:max-w-h-xl gap-12 p-0 justify-between flex-col lg:flex-row">
         <div data-aos="zoom-in-left" data-aos-duration="1000" className="bg-orange-50 p-10 border border-orange-600 rounded-lg shadow-lg">
           <h3 className="text-3xl">Book Your Schedule</h3>
@@ -23,6 +27,7 @@ const Party = () => {
         </span>
         <img data-aos="zoom-in-right" data-aos-duration="1000" src={party} className="max-w-lg rounded-lg" />
       </div>
+    </div>
     </div>
   );
 };

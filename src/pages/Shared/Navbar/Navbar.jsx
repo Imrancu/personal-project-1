@@ -17,7 +17,7 @@ const Navbar = () => {
   };
   
   const navOptions = (
-    <div className="flex justify-center items-center">
+    <div className="lg:flex bg-black bg-opacity-60 p-2 rounded-lg justify-center items-center">
       <li>
         <Link to="/">Home</Link>
       </li>
@@ -26,6 +26,12 @@ const Navbar = () => {
       </li>
       <li>
         <Link to="order/salad">Order Food</Link>
+      </li>
+      <li>
+        <Link to="about">About</Link>
+      </li>
+      <li>
+        <Link to="contact">Contact</Link>
       </li>
       {user && isAdmin && (
         <li>

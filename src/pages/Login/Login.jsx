@@ -57,11 +57,11 @@ const Login = () => {
       </Helmet>
       <div className="hero min-h-screen">
         <div className="hero-content flex-col md:flex-row-reverse">
-          <div className="text-center w-1/2 lg:text-left">
+          <div className="text-center w-1/2 lg:text-left" data-aos="fade-left" data-aos-duration="1000">
             {/* <h1 className="text-5xl font-bold">Login now!</h1> */}
             <img src={login} alt="" />
           </div>
-          <div className="card md:w-1/2 max-w-sm bg-orange-50">
+          <div data-aos="fade-right" data-aos-duration="1000" className="card border border-orange-600 md:w-1/2 max-w-sm bg-orange-50">
             <form onSubmit={handleLogin} className="card-body pb-0">
               <div className="form-control">
                 <label className="label">
@@ -86,13 +86,8 @@ const Login = () => {
                   className="input input-bordered"
                   required
                 />
-                <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
-                </label>
               </div>
-              <p className="">
+              <p className="ml-2">
                 <small>
                   Do not have account?{" "}
                   <Link to="/signUp" className="text-orange-500 underline">
@@ -100,7 +95,7 @@ const Login = () => {
                   </Link>
                 </small>
               </p>
-              <div className="form-control mt-6">
+              <div className="form-control">
                 <input
                   // Todo: Apply disable for re captcha
                   disabled={false}

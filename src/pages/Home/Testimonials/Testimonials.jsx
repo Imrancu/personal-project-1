@@ -17,7 +17,7 @@ const Testimonials = () => {
       .then((data) => setReviews(data));
   }, []);
   return (
-    <section className="my-10 max-w-screen-xl mx-auto" data-aos="zoom-in" data-aos-duration="2000">
+    <section className="my-10 max-w-screen-xl mx-auto mt-32 mb-32" data-aos="zoom-in" data-aos-duration="2000">
       <SectionTitle
         subHeading={"What Our Client Say!"}
         heading={"Testimonials"}

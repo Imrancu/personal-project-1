@@ -57,10 +57,10 @@ const SignUp = () => {
       </Helmet>
       <div className="hero min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center w-1/2 lg:text-left">
+          <div className="text-center w-1/2 lg:text-left" data-aos="fade-right" data-aos-duration="1000">
           <img src={signUp} alt="" />
           </div>
-          <div className="card shrink-0 w-full max-w-sm bg-orange-50">
+          <div className="card shrink-0 w-full max-w-sm border border-orange-600 bg-orange-50" data-aos="fade-left" data-aos-duration="1000">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body pb-0">
               <div className="form-control">
                 <label className="label">
@@ -77,20 +77,6 @@ const SignUp = () => {
                   <p className="text-red-600">Name is required</p>
                 )}
               </div>
-              {/* <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Photo URL</span>
-                </label>
-                <input
-                  {...register("photoURL", { required: true })}
-                  type="text"
-                  placeholder="photo url"
-                  className="input input-bordered"
-                />
-                {errors.photoURL && (
-                  <p className="text-red-600">Photo URL is required</p>
-                )}
-              </div> */}
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>

@@ -11,6 +11,24 @@ const images = [img1, img2, img3, img4, img5, img6];
 const Banner = () => {
   return (
     <Carousel
+    containerClass="carousel-container" // Add a class to the carousel container for custom styling
+      itemClass="carousel-item" // Add a class to the carousel items for custom styling
+      responsive={{
+        // Configure responsive behavior if needed
+        // For example, showing different number of items based on screen size
+        desktop: {
+          breakpoint: { max: 3000, min: 1024 },
+          items: 3,
+        },
+        tablet: {
+          breakpoint: { max: 1024, min: 464 },
+          items: 2,
+        },
+        mobile: {
+          breakpoint: { max: 464, min: 0 },
+          items: 1,
+        },
+      }}
       >
       {images.map((img, index) => (
         <div key={index}>

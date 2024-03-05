@@ -1,8 +1,8 @@
 const Footer = () => {
   return (
     
-      <div className=" bg-orange-50" data-aos-duration="1000" data-aos="zoom-in">
-        <footer className="footer p-10 max-w-screen-xl mx-auto text-base-content">
+      <div className=" bg-black bg-opacity-70" data-aos-duration="1000" data-aos="zoom-in">
+        <footer className="footer p-10 max-w-screen-xl mx-auto text-white">
         <nav>
           <h6 className="footer-title">Services</h6>
           <a className="link link-hover">Branding</a>
@@ -27,7 +27,7 @@ const Footer = () => {
           <h6 className="footer-title">Newsletter</h6>
           <fieldset className="form-control w-80">
             <label className="label">
-              <span className="label-text">Enter your email address</span>
+              <span className="label-text text-white">Enter your email address</span>
             </label>
             <div className="join">
               <input
