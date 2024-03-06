@@ -52,7 +52,7 @@ const BestServices = () => {
         <div className="flex">
             <div className="gap-6 grid lg:grid-cols-4 md:grid-cols-3 my-12 sm:grid-cols-2">
           {services.map((service, index) => (
-            <div className="bg-orange-100 text-gray-600 p-10 rounded-lg hover:bg-transparent hover:text-white hover:border transition duration-300" key={index}>
+            <div className="bg-orange-100 text-gray-600 p-10 rounded-lg hover:bg-transparent hover:text-white hover:border transition duration-300" data-aos="zoom-in" data-aos-duration="2000" key={index}>
                 <h2 className="text-3xl font-semibold mb-5">{service.name}</h2>
                 <small className="text-5xl">{service.icon}</small>
                 <p className="mt-5">{service.description}</p>

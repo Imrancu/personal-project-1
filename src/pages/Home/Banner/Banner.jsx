@@ -8,7 +8,7 @@ import img5 from "../../../assets/home/05.png";
 import img6 from "../../../assets/home/06.png";
 
 const images = [img1, img2, img3, img4, img5, img6];
-const Banner = () => {
+const Banner = () => {  
   return (
     <Carousel
     containerClass="carousel-container" // Add a class to the carousel container for custom styling
